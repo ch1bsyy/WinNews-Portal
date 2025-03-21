@@ -1,0 +1,26 @@
+{
+  "name": "winnews",
+  "private": "true",
+  "workspaces": [
+    "backend",
+    "admin",
+    "user"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:admin\" \"npm run dev:user\"",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:admin": "cd admin && npm run dev",
+    "dev:user": "cd user && npm run dev",
+    "build": "npm run build:backend && npm run build:admin && npm run build:user",
+    "build:backend": "cd backend && npm run build",
+    "build:admin": "cd admin && npm run build",
+    "build:user": "cd user && npm run build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
